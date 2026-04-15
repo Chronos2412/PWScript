@@ -1,0 +1,16 @@
+{
+  "name": "powershell-script-manager",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "postinstall": "npm run db:generate -w server && npm run db:push -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
