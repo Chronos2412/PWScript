@@ -4,9 +4,12 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth antialiased;
   }
   body {
-    @apply bg-slate-50 text-slate-900;
+    @apply min-h-screen bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100/90 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:text-slate-100;
+  }
+  ::selection {
+    @apply bg-sky-200/80 text-slate-900 dark:bg-sky-500/40 dark:text-white;
   }
 }
